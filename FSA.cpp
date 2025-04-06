@@ -9,12 +9,14 @@ private:
 public:
     State currentState = Start;
 
+    // Input is at least 3 letters long
     bool WordLength(string input) {
         if (input.length() < 3) currentState = F;
         else currentState = T;
     }
 
     bool ProcessChar(char ch) {
+        // Input is of the alphabet {a, b, c}
         if (ch != 'a' && ch != 'b' && ch != 'c') {
             currentState = F;
         }
